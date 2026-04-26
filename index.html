@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Pandey</title>
+    <link rel="icon" type="image/png" href="assets/logos/University_at_Buffalo_logo.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1e293b',
+                        accent: '#3b82f6',
+                        secondary: '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .paper-card {
+            transition: all 0.3s ease;
+        }
+        .paper-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+    <script>
+        lucide.createIcons();
+    </script>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-serif text-xl font-bold text-slate-900">Shubham Pandey</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">About</a>
+                    <a href="#experience" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">Experience</a>
+                    <a href="#research" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">Research</a>
+                    <a href="#publications" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">Publications</a>
+                    <!-- <a href="#projects" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">Projects</a> -->
+                    <a href="#blog" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">Blogs</a>
+                    <a href="#awards" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">Awards</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">Contact</a>
+                    <a href="assets/Shubham_Pandey_resume_phd.pdf" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900">Resume</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">About</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">Experience</a>
+                <a href="#research" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">Research</a>
+                <a href="#publications" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">Publications</a>
+                <!-- <a href="#projects" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">Projects</a> -->
+                <a href="#blog" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">Blogs</a>
+                <a href="#awards" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">Awards</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">Contact</a>
+                <a href="assets/Shubham_Pandey_resume_phd.pdf" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-accent font-semibold tracking-wide uppercase text-sm mb-4">AI for Healthcare | Computer Vision | Multimodal Learning</p>
+                        <h1 class="font-serif text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                            Building AI Systems for <span class="gradient-text">Real-World Impact</span>
+                        </h1>
+                    </div>
+                    <p class="text-lg text-slate-600 leading-relaxed max-w-lg">
+                        Leveraging deep learning and multimodal data to build scalable, interpretable AI solutions for real-world healthcare challenges.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#publications" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-accent hover:bg-blue-700 transition-colors duration-200">
+                            View Publications
+                            <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 border border-slate-300 text-base font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition-colors duration-200">
+                            Get in Touch
+                        </a>
+                    </div>
+                    <!-- <div class="flex items-center gap-6 pt-4">
+                        <a href="#" class="text-slate-400 hover:text-accent transition-colors">
+                            <i data-lucide="twitter" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-accent transition-colors">
+                            <i data-lucide="linkedin" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-accent transition-colors">
+                            <i data-lucide="github" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-accent transition-colors">
+                            <i data-lucide="book-open" class="h-5 w-5"></i>
+                        </a>
+                    </div> -->
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-3xl transform rotate-3"></div>
+                    <img src="assets/images/intro_image.png" alt="Intro Image" class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 p-2 rounded-lg">
+                                <i data-lucide="award" class="h-6 w-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">20+ Citations</p>
+                                <p class="text-xs text-slate-500">h-index: 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <!-- <div class="space-y-2">
+                    <p class="text-4xl font-bold text-blue-400">3+</p>
+                    <p class="text-sm text-slate-400">Years Experience</p>
+                </div> -->
+                <div class="space-y-2">
+                    <p class="text-4xl font-bold text-blue-400">4</p>
+                    <p class="text-sm text-slate-400">Publications</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl font-bold text-blue-400">3</p>
+                    <p class="text-sm text-slate-400">Internships</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl font-bold text-blue-400">20+</p>
+                    <p class="text-sm text-slate-400">Citations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1">
+                    <img src="assets/images/headshot.png" alt="Profile" class="rounded-2xl shadow-lg w-full object-cover h-80 lg:h-96">
+                    <!-- News / Announcements Slideshow -->
+                    <div class="mt-6 bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+                        <div class="p-4 border-b border-slate-100 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Latest Updates</p>
+                                <h3 class="font-semibold text-slate-900">News & Announcements</h3>
+                            </div>
+
+                            <div class="flex gap-2">
+                                <button onclick="previousNewsSlide()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
+                                    <i data-lucide="chevron-left" class="h-4 w-4"></i>
+                                </button>
+                                <button onclick="nextNewsSlide()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
+                                    <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <a id="news-slide-link" href="#" target="_blank" rel="noopener noreferrer" class="block p-5 hover:bg-slate-50 transition-colors">
+                            <p id="news-slide-date" class="text-xs font-medium text-blue-600 mb-2"></p>
+                            <h4 id="news-slide-title" class="font-semibold text-slate-900 leading-snug mb-2"></h4>
+                            <p id="news-slide-description" class="text-sm text-slate-600 leading-relaxed"></p>
+
+                            <div class="mt-4 inline-flex items-center text-sm font-medium text-accent">
+                                Read more
+                                <i data-lucide="external-link" class="ml-1 h-3 w-3"></i>
+                            </div>
+                        </a>
+
+                        <div id="news-slide-dots" class="flex justify-center gap-2 pb-4"></div>
+                    </div>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="map-pin" class="h-4 w-4"></i>
+                            <span class="text-sm">University at Buffalo, SUNY, Buffalo, NY, USA</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="mail" class="h-4 w-4"></i>
+                            <span class="text-sm">spandey8@buffalo.edu</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="graduation-cap" class="h-4 w-4"></i>
+                            <span class="text-sm">Ph.D. in Computer Science</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Icons -->
+                    <div class="mt-6 pt-6 border-t border-slate-200">
+                        <p class="text-xs font-medium text-slate-500 uppercase tracking-wide mb-3">Connect</p>
+                        <div class="flex items-center gap-4">
+                            <a href="https://www.linkedin.com/in/shubhampandey8/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-blue-100 hover:text-blue-600 transition-all duration-200 group">
+                                <!-- <i data-lucide="linkedin" class="h-5 w-5"></i> -->
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" class="h-5 w-5" alt="linkedin">
+                            </a>
+                            <a href="https://github.com/KNITPhoenix/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-slate-800 hover:text-white transition-all duration-200 group">
+                                <!-- <i data-lucide="github" class="h-5 w-5"></i> -->
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" class="h-5 w-5" alt="github">
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=sncALSkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-blue-100 hover:text-blue-600 transition-all duration-200 group">
+                                <!-- <i data-lucide="book-open" class="h-5 w-5"></i> -->
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" class="h-5 w-5" alt="Google Scholar">
+                            </a>
+                            <a href="https://orcid.org/0009-0005-5507-2858" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-green-100 hover:text-green-600 transition-all duration-200 group">
+                                <!-- <i data-lucide="id-card" class="h-5 w-5"></i> -->
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" class="h-5 w-5" alt="ORCID">
+                            </a>
+                            <a href="https://x.com/csespandey" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 hover:bg-sky-100 hover:text-sky-500 transition-all duration-200 group">
+                                <!-- <i data-lucide="twitter" class="h-5 w-5"></i> -->
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" class="h-5 w-5" alt="X">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 space-y-6">
+                    <h2 class="font-serif text-3xl font-bold text-slate-900">About Me</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        I am a PhD student in Computer Science at the University at Buffalo, where I work at the intersection of computer vision, deep learning and multi-modal AI with a focus on healthcare applications. My research centers on building intelligent systems that leverage diverse data sources to improve patient care, clinical decision-making and workflow optimization, in collaboration with institutions such as Roswell Park Comprehensive Cancer Center. I have contributed to multiple peer-reviewed publications in leading venues, spanning areas such as multimodal learning, scientific visual question answering and biometric recognition. Alongside my research, I have served as a lead teaching assistant for data-intensive computing courses and gained industry experience at MathWorks and Wobot Intelligence, where I worked on computer vision systems and real-world AI deployments.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        I am passionate about developing impactful AI solutions that bridge theory and practice, particularly in high-stakes domains like healthcare.
+                    </p>
+                    
+                    <div class="pt-6">
+                        <h3 class="font-semibold text-slate-900 mb-4">Education</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <div class="bg-blue-100 p-2 rounded-lg h-fit">
+                                    <i data-lucide="university" class="h-5 w-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Ph.D. in Computer Science</p>
+                                    <p class="text-sm text-slate-500">University at Buffalo, SUNY | 2023 - Present</p>
+                                    <p class="text-sm text-slate-600 mt-1">Thesis: Multimodality, Explainability and Interpretability in Health AI</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <div class="bg-blue-100 p-2 rounded-lg h-fit">
+                                    <i data-lucide="university" class="h-5 w-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">M.S. in Computer Science</p>
+                                    <p class="text-sm text-slate-500">University at Buffalo, SUNY | 2021 - 2023</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <div class="bg-blue-100 p-2 rounded-lg h-fit">
+                                    <i data-lucide="university" class="h-5 w-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">B.Tech in Electronics Engineering</p>
+                                    <p class="text-sm text-slate-500">Kamla Nehru Institute of Technology | 2016 - 2020</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <div class="bg-blue-100 p-2 rounded-lg h-fit">
+                                    <i data-lucide="university" class="h-5 w-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Secondary School (PCM)</p>
+                                    <p class="text-sm text-slate-500">City Monterssori School | 2015</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <h3 class="font-semibold text-slate-900 mb-4">Research Interests</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Multimodal AI</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Computer Vision</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Deep Learning & Representation Learning</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Explainable & Interpretable AI (XAI)</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">AI for Healthcare & Clinical Decision Support</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Vision-Language Models (VLMs) & Multimodal LLMs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 lg:py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Professional Experience</h2>
+                <p class="text-slate-600 text-lg">Academic and Industry roles throughout my career.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline line -->
+                <!-- <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-slate-200"></div> -->
+
+                <!-- Experience Item 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img src="assets/logos/University_at_Buffalo_logo.svg" alt="University at Buffalo logo" class="max-h-9 max-w-9 object-contain">
+                        </div>
+
+                        <div class="min-w-0">
+                        <h3 class="font-semibold text-lg text-slate-900">Research Assistant</h3>
+                        <p class="text-accent font-medium">University at Buffalo, SUNY</p>
+                        <p class="text-sm text-slate-500">Buffalo, NY, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        Aug 2025 - Present
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                        Research and Development
+                        </span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li>• Exploring domain of Multi-Modality and Explainability in Health AI</li>
+                        <li>• Funded by Roswell Park Comprehensive Cancer Center, Buffalo, NY</li>
+                        <li>• Developing deep learning architectures using multi-modal data for patient care and clinical workflow optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img src="assets/logos/roswell.svg" alt="University at Buffalo logo" class="max-h-9 max-w-9 object-contain">
+                        </div>
+
+                        <div class="min-w-0">
+                        <h3 class="font-semibold text-lg text-slate-900">Predoctoral Trainee</h3>
+                        <p class="text-accent font-medium">Roswell Park Comprehensive Cancer Center</p>
+                        <p class="text-sm text-slate-500">Buffalo, NY, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        May, 2025 - August, 2025
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                        Research and Development
+                        </span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li>• Worked on project focused on using Multi-modal preoperative data to predict probability of Pulmonary Postoperative Complications</li>
+                        <li>• Another Project focuses on automated generation of radiology reports using X-Ray and CT scans</li>
+                        <li>• Paper accepted in P2P-CV @ WACV 2026</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img src="assets/logos/University_at_Buffalo_logo.svg" alt="University at Buffalo logo" class="max-h-9 max-w-9 object-contain">
+                        </div>
+
+                        <div class="min-w-0">
+                        <h3 class="font-semibold text-lg text-slate-900">Teaching Assistant</h3>
+                        <p class="text-accent font-medium">University at Buffalo, SUNY</p>
+                        <p class="text-sm text-slate-500">Buffalo, NY, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        August, 2024 - May, 2025
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                        Teaching
+                        </span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li>• Lead Teaching Assistant for CSE 587 (Data Intensive Computing)</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img src="assets/logos/University_at_Buffalo_logo.svg" alt="University at Buffalo logo" class="max-h-9 max-w-9 object-contain">
+                        </div>
+
+                        <div class="min-w-0">
+                        <h3 class="font-semibold text-lg text-slate-900">Research Assistant</h3>
+                        <p class="text-accent font-medium">University at Buffalo, SUNY</p>
+                        <p class="text-sm text-slate-500">Buffalo, NY, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        May, 2024 - August, 2024
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                        Research and Development
+                        </span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li>• Developed a portal to crawl health care resources such as NIH to gather grant and proposals</li>
+                        <li>• Portal paraphrased the proposal information accurately, making them concise using Llama 3.1</li>
+                        <li>• Funded by Office of the Vice-president for Health Sciences, University at Buffalo</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 5 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img src="assets/logos/University_at_Buffalo_logo.svg" alt="University at Buffalo logo" class="max-h-9 max-w-9 object-contain">
+                        </div>
+
+                        <div class="min-w-0">
+                        <h3 class="font-semibold text-lg text-slate-900">Teaching Assistant</h3>
+                        <p class="text-accent font-medium">University at Buffalo, SUNY</p>
+                        <p class="text-sm text-slate-500">Buffalo, NY, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        August, 2023 - May, 2024
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                        Teaching
+                        </span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li>• Lead Teaching Assistant for CSE 587 (Data Intensive Computing)</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 6 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img src="assets/logos/Matlab.png" alt="University at Buffalo logo" class="max-h-9 max-w-9 object-contain">
+                        </div>
+
+                        <div class="min-w-0">
+                        <h3 class="font-semibold text-lg text-slate-900">EDG Intern - Computer Vision and Deep Learning Team</h3>
+                        <p class="text-accent font-medium">The MathWorks Inc.</p>
+                        <p class="text-sm text-slate-500">Natick, MA, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        May, 2022 - August, 2022
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                        Computer Vision and Deep Learning
+                        </span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li>• Worked on Optical Flow Method for cylindrical, sphere and plane model giving a clear perception on working of optical flow</li>
+                        <li>• Added Rotated Rectangle support to Image, Video and Ground Truth Labeler apps for MATLAB 2022b release with unit and automation testing</li>
+                        <li>• Applied DRY principle and inheritance to create new software in existing codebase</li>
+                        <li>• Gained thorough knowledge of Sandbox and Perforce client</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 7 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img src="assets/logos/University_at_Buffalo_logo.svg" alt="University at Buffalo logo" class="max-h-9 max-w-9 object-contain">
+                        </div>
+
+                        <div class="min-w-0">
+                        <h3 class="font-semibold text-lg text-slate-900">Research Assistant</h3>
+                        <p class="text-accent font-medium">University at Buffalo, SUNY</p>
+                        <p class="text-sm text-slate-500">Buffalo, NY, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        August, 2021 - May, 2023
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                        Research and Development
+                        </span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li>• Completed projects focused on VQA in scientific informatics and got a paper accepted in ICDAR’23</li>
+                        <li>• Worked on project involving object detection and scene text detection funded by NSF S&CC program</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 8 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img src="assets/logos/wobot.svg" alt="University at Buffalo logo" class="max-h-9 max-w-9 object-contain">
+                        </div>
+
+                        <div class="min-w-0">
+                        <h3 class="font-semibold text-lg text-slate-900">Vision Data Intern - Computer Vision team</h3>
+                        <p class="text-accent font-medium">Wobot Intelligence Pvt. Ltd.</p>
+                        <p class="text-sm text-slate-500">Delhi, India</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        October, 2020 - January, 2021
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                        Research and Development
+                        </span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                        <li>• Curated 15 datasets, employing web crawlers and web scrapers to scrap around 5 websites</li>
+                        <li>• Implemented 2 GUIs to Filter and annotate datasets in PyQt5 in Python</li>
+                        <li>• Implemented a Deep Learning architecture with the aim to enforce COVID sanitation guidelines for 3 food and beverage vendors</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas -->
+    <section id="research" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Research Areas</h2>
+                <p class="text-slate-600 text-lg">Exploring the frontiers of computer science through interdisciplinary research.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Research Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-blue-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="network" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl text-slate-900 mb-3">Multimodal AI and Computer Vision</h3>
+                    <p class="text-slate-600 mb-4">Developing multimodal AI systems that integrate vision, language, and structured data for real-world decision-making and healthcare applications.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-500"></i>
+                            Multimodal Learning & Vision-Language Models
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-500"></i>
+                            Medical Imaging & Risk Prediction
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-purple-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="search-code" class="h-6 w-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl text-slate-900 mb-3">Explainable & Interpretable AI (XAI)</h3>
+                    <p class="text-slate-600 mb-4">Building transparent and interpretable AI systems to enable reliable and accountable decision-making in real-world applications.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-500"></i>
+                            Attribution Methods & Feature Importance Analysis
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-500"></i>
+                            Interpretable Deep Learning & Post-hoc Explanation Methods
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Research Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-green-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="layers3" class="h-6 w-6 text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl text-slate-900 mb-3">Deep Learning & Representation Learning</h3>
+                    <p class="text-slate-600 mb-4">Designing deep learning models that learn robust and meaningful representations from complex, high-dimensional data for real-world applications.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-500"></i>
+                            Representation Learning & Feature Embeddings
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-500"></i>
+                            Self-Supervised & Contrastive Learning
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Research Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-blue-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="heart-pulse" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl text-slate-900 mb-3">AI for Healthcare</h3>
+                    <p class="text-slate-600 mb-4">Designing machine learning models that integrate heterogeneous healthcare data to support clinical decision-making and personalized medicine.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-500"></i>
+                            Multimodal Healthcare Data Integration
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-500"></i>
+                            Risk Prediction & Clinical Decision Support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+                <div>
+                    <h2 class="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-2">Publications</h2>
+                    <p class="text-slate-600">Peer-reviewed articles and conference proceedings</p>
+                </div>
+                <!-- <button onclick="filterPublications('all')" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors">
+                    View All Publications
+                </button> -->
+            </div>
+
+            <div class="space-y-6" id="publications-list">
+                <!-- Publication 1 -->
+                <div class="paper-card bg-white border border-slate-200 rounded-xl p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded">Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops</span>
+                                <span class="text-sm text-slate-500">2026</span>
+                            </div>
+                            <h3 class="font-semibold text-xl text-slate-900 mb-3 hover:text-accent cursor-pointer">
+                                LLM Augmented Intervenable Multimodal Adaptor for Post-operative Complication Prediction in Lung Cancer Surgery
+                            </h3>
+                            <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                                We present MIRACLE, a deep learning architecture for prediction of risk of postoperative complications in lung cancer surgery by integrating preoperative clinical and radiological data. MIRACLE employs a hyperspherical embedding space fusion of heterogeneous inputs, enabling the extraction of robust, discriminative features from both structured clinical records and high-dimensional radiological images. To enhance transparency of prediction and clinical utility, we incorporate an interventional deep learning module in MIRACLE, that not only refines predictions but also provides interpretable and actionable insights, allowing domain experts to interactively adjust recommendations based on clinical expertise. 
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs text-slate-500">Authors: S. Pandey, B. Jawade, S. Setlur, V. Govindaraju, K. Seastedt</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://openaccess.thecvf.com/content/WACV2026W/P2P/html/Pandey_LLM_Augmented_Intervenable_Multimodal_Adaptor_for_Post-operative_Complication_Prediction_in_WACVW_2026_paper.html" class="text-sm font-medium text-accent hover:text-blue-700 flex items-center gap-1">
+                                    <i data-lucide="external-link" class="h-4 w-4"></i>
+                                    View Paper
+                                </a>
+                                <a href="https://openaccess.thecvf.com/content/WACV2026W/P2P/papers/Pandey_LLM_Augmented_Intervenable_Multimodal_Adaptor_for_Post-operative_Complication_Prediction_in_WACVW_2026_paper.pdf" class="text-sm font-medium text-slate-500 hover:text-slate-700 flex items-center gap-1">
+                                    <i data-lucide="download" class="h-4 w-4"></i>
+                                    PDF
+                                </a>
+                                <span class="text-sm text-slate-400"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="paper-card bg-white border border-slate-200 rounded-xl p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded">IEEE International Conference on Image Processing (ICIP)</span>
+                                <span class="text-sm text-slate-500">2025</span>
+                            </div>
+                            <h3 class="font-semibold text-xl text-slate-900 mb-3 hover:text-accent cursor-pointer">
+                                Ridgeformer: Multi-Stage Contrastive Training for Fine-Grained Cross-Domain Fingerprint Recognition
+                            </h3>
+                            <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                                We propose a novel multi-stage transformer-based contactless fingerprint matching approach that first captures global spatial features and subsequently refines localized feature alignment across fingerprint samples. By employing a hierarchical feature extraction and matching pipeline, our method ensures fine-grained, cross-sample alignment while maintaining the robustness of global feature representation.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs text-slate-500">Authors: S. Pandey, B. Jawade and S. Setlur</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/11084677" class="text-sm font-medium text-accent hover:text-blue-700 flex items-center gap-1">
+                                    <i data-lucide="external-link" class="h-4 w-4"></i>
+                                    View Paper
+                                </a>
+                                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11084677" class="text-sm font-medium text-slate-500 hover:text-slate-700 flex items-center gap-1">
+                                    <i data-lucide="download" class="h-4 w-4"></i>
+                                    PDF
+                                </a>
+                                <span class="text-sm text-slate-400">Cited by 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="paper-card bg-white border border-slate-200 rounded-xl p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded">AACR Special Conference in Cancer Research: Artificial Intelligence and Machine Learning</span>
+                                <span class="text-sm text-slate-500">2025</span>
+                            </div>
+                            <h3 class="font-semibold text-xl text-slate-900 mb-3 hover:text-accent cursor-pointer">
+                                Abstract A054: Multimodal LLM-Driven Intervention for Precision Risk Prediction in Lung Cancer Surgery Available
+                            </h3>
+                            <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                                Development of computational pipelines for analyzing single-cell RNA sequencing data, enabling the discovery of rare cell populations in heterogeneous tissues.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs text-slate-500">Authors: S. Pandey, B. Jawade, S. Setlur, V. Govindaraju, K. Seastedt</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://aacrjournals.org/clincancerres/article/31/13_Supplement/A054/763267" class="text-sm font-medium text-accent hover:text-blue-700 flex items-center gap-1">
+                                    <i data-lucide="external-link" class="h-4 w-4"></i>
+                                    View Abstract
+                                </a>
+                                <!-- <a href="#" class="text-sm font-medium text-slate-500 hover:text-slate-700 flex items-center gap-1">
+                                    <i data-lucide="download" class="h-4 w-4"></i>
+                                    PDF
+                                </a> -->
+                                <span class="text-sm text-slate-400">Cited by 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publication 4 -->
+                <div class="paper-card bg-white border border-slate-200 rounded-xl p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded">International Conference on Document Analysis and Recognition (ICDAR)</span>
+                                <span class="text-sm text-slate-500">2023</span>
+                            </div>
+                            <h3 class="font-semibold text-xl text-slate-900 mb-3 hover:text-accent cursor-pointer">
+                                RealCQA: Scientific Chart Question Answering as a Test-Bed for First-Order Logic
+                            </h3>
+                            <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                                We present a comprehensive study of chart visual question-answering(QA) task, to address the challenges faced in comprehending and extracting data from chart visualizations within documents.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs text-slate-500">Authors: S. Ahmed, B. Jawade, S. Pandey, S. Setlur, V. Govindaraju</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://link.springer.com/chapter/10.1007/978-3-031-41682-8_5" class="text-sm font-medium text-accent hover:text-blue-700 flex items-center gap-1">
+                                    <i data-lucide="external-link" class="h-4 w-4"></i>
+                                    View Paper
+                                </a>
+                                <a href="https://arxiv.org/pdf/2308.01979" class="text-sm font-medium text-slate-500 hover:text-slate-700 flex items-center gap-1">
+                                    <i data-lucide="download" class="h-4 w-4"></i>
+                                    PDF
+                                </a>
+                                <span class="text-sm text-slate-400">Cited by 21</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="mt-12 text-center">
+                <button class="inline-flex items-center px-6 py-3 border border-slate-300 text-base font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition-colors duration-200">
+                    Load More Publications
+                    <i data-lucide="chevron-down" class="ml-2 h-4 w-4"></i>
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Projects
+    <section id="projects" class="py-20 lg:py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Current Projects</h2>
+                <p class="text-slate-600 text-lg">Active research initiatives and ongoing collaborations</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8"> -->
+                <!-- Project 1
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/technology/640x360/15" alt="Project 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Active</span>
+                            <span class="text-sm text-slate-500">2023 - Present</span>
+                        </div>
+                        <h3 class="font-semibold text-xl text-slate-900 mb-3">AI-Driven Drug Discovery Platform</h3>
+                        <p class="text-slate-600 mb-4">Developing machine learning models to predict drug efficacy and toxicity, accelerating the pharmaceutical discovery pipeline.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">JD</div>
+                                <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">MK</div>
+                                <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white flex items-center justify-center text-xs font-medium text-white">+3</div>
+                            </div>
+                            <a href="#" class="text-accent hover:text-blue-700 font-medium text-sm flex items-center gap-1">
+                                Learn more <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Project 2
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/science/640x360/22" alt="Project 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Funded</span>
+                            <span class="text-sm text-slate-500">2022 - 2025</span>
+                        </div>
+                        <h3 class="font-semibold text-xl text-slate-900 mb-3">Population Genomics Consortium</h3>
+                        <p class="text-slate-600 mb-4">International collaboration analyzing genetic diversity across global populations to understand human evolution and migration patterns.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">AL</div>
+                                <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">RS</div>
+                                <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white flex items-center justify-center text-xs font-medium text-white">+8</div>
+                            </div>
+                            <a href="#" class="text-accent hover:text-blue-700 font-medium text-sm flex items-center gap-1">
+                                Learn more <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Recent Blogs Section -->
+    <section id="blog" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+                <div>
+                    <h2 class="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-2">Recent Blogs</h2>
+                    <p class="text-slate-600">Thoughts on popular research and technology</p>
+                </div>
+                <!-- <a href="#" class="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors">
+                    View All Posts
+                    <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                </a> -->
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*21j7bYIp0a0XCBj_eX0z6Q.jpeg" alt="Blog 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">Research</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+                            <i data-lucide="calendar" class="h-4 w-4"></i>
+                            <span>Februrary 18, 2024</span>
+                            <span class="text-slate-300">•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="font-semibold text-xl text-slate-900 mb-3 group-hover:text-accent transition-colors">
+                            Evolving domain of Parameter Efficient Fine-Tuning and increasing model capacity for free!!
+                        </h3>
+                        <p class="text-slate-600 mb-4 flex-grow">
+                            Explaining the paper "Increasing Model Capacity For Free: A Simple Strategy for Fine-Tuning Large Models" published in ICLR, 2024 which proposes CapaBoost, a novel approach to address a key challenge in parameter-efficient fine-tuning (PEFT) methods like LoRA and Adapters.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-medium text-slate-600">SP</div>
+                                <span class="text-sm font-medium text-slate-700">Shubham Pandey</span>
+                            </div>
+                            <a href="https://medium.com/@spandey8/evolving-domain-of-parameter-efficient-fine-tuning-and-increasing-model-capacity-for-free-88ac9355de16" class="text-accent hover:text-blue-700 font-medium text-sm flex items-center gap-1">
+                                Read more <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*hx6y0apPHQRcSNc1wJaW5Q.jpeg" alt="Blog 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">Research</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+                            <i data-lucide="calendar" class="h-4 w-4"></i>
+                            <span>January 24, 2024</span>
+                            <span class="text-slate-300">•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3 class="font-semibold text-xl text-slate-900 mb-3 group-hover:text-accent transition-colors">
+                            Revolutionizing Medical Image Segmentation: Unveiling MedSAM and the Future of Diagnosis
+                        </h3>
+                        <p class="text-slate-600 mb-4 flex-grow">
+                            Explaining "Segment anything in medical images", which proposes MedSAM, a novel approach to medical image segmentation that leverages the power of the Segment Anything Model (SAM) to achieve state-of-the-art performance across a wide range of medical imaging modalities and tasks.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-medium text-slate-600">SP</div>
+                                <span class="text-sm font-medium text-slate-700">Shubham Pandey</span>
+                            </div>
+                            <a href="https://medium.com/@spandey8/revolutionizing-medical-image-segmentation-unveiling-medsam-and-the-future-of-diagnosis-de444649694c" class="text-accent hover:text-blue-700 font-medium text-sm flex items-center gap-1">
+                                Read more <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Newsletter CTA -->
+            <!-- <div class="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white">
+                <div class="max-w-2xl mx-auto">
+                    <i data-lucide="mail" class="h-12 w-12 text-blue-400 mx-auto mb-4"></i>
+                    <h3 class="font-serif text-2xl font-bold mb-3">Subscribe to Research Updates</h3>
+                    <p class="text-slate-300 mb-6">Get the latest blog posts, publication alerts, and research insights delivered directly to your inbox.</p>
+                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-blue-400 transition-colors">
+                        <button type="button" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
+                            Subscribe
+                            <i data-lucide="send" class="h-4 w-4"></i>
+                        </button>
+                    </form>
+                    <p class="text-xs text-slate-400 mt-3">No spam. Unsubscribe anytime.</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Awards & Recognition Section -->
+    <section id="awards" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Awards & Recognition</h2>
+                <p class="text-slate-600 text-lg">Honors and accolades received throughout my career.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Award 1 -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-lg transition-all duration-300 group">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-yellow-100 p-3 rounded-lg group-hover:bg-yellow-200 transition-colors">
+                            <i data-lucide="trophy" class="h-6 w-6 text-yellow-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-slate-900">Winner of INFORMS Ignite</h3>
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded border">2025</span>
+                            </div>
+                            <p class="text-sm text-slate-600">A fast-paced research pitch competition designed to foster collaboration and idea exchange among students across operations research, analytics, and data science.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Award 2 -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-lg transition-all duration-300 group">
+                    <div class="flex items-start gap-4">
+                        <!-- <div class="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors">
+                            <i data-lucide="award" class="h-6 w-6 text-blue-600"></i>
+                        </div> -->
+                        <div class="bg-yellow-100 p-3 rounded-lg group-hover:bg-yellow-200 transition-colors">
+                            <i data-lucide="trophy" class="h-6 w-6 text-yellow-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-slate-900">Second Runner Up</h3>
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded border">2018</span>
+                            </div>
+                            <p class="text-sm text-slate-600">"Avishkar", annual Tech-Fest of MNNIT, Allahabad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Award 3 -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-lg transition-all duration-300 group">
+                    <div class="flex items-start gap-4">
+                        <!-- <div class="bg-purple-100 p-3 rounded-lg group-hover:bg-purple-200 transition-colors">
+                            <i data-lucide="medal" class="h-6 w-6 text-purple-600"></i>
+                        </div> -->
+                        <div class="bg-yellow-100 p-3 rounded-lg group-hover:bg-yellow-200 transition-colors">
+                            <i data-lucide="trophy" class="h-6 w-6 text-yellow-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-slate-900">Second Runner Up in North Region</h3>
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded border">2018</span>
+                            </div>
+                            <p class="text-sm text-slate-600">Quiz "Electron", National level Buiz quiz, National Thermal Power Corporation, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Award 4 -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-lg transition-all duration-300 group">
+                    <div class="flex items-start gap-4">
+                        <!-- <div class="bg-green-100 p-3 rounded-lg group-hover:bg-green-200 transition-colors">
+                            <i data-lucide="star" class="h-6 w-6 text-green-600"></i>
+                        </div> -->
+                        <div class="bg-yellow-100 p-3 rounded-lg group-hover:bg-yellow-200 transition-colors">
+                            <i data-lucide="trophy" class="h-6 w-6 text-yellow-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-slate-900">National Level 8th Rank</h3>
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded border">2018</span>
+                            </div>
+                            <p class="text-sm text-slate-600">Quiz "Electron", National level Buiz quiz, National Thermal Power Corporation, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Award 5 -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-lg transition-all duration-300 group">
+                    <div class="flex items-start gap-4">
+                        <!-- <div class="bg-red-100 p-3 rounded-lg group-hover:bg-red-200 transition-colors">
+                            <i data-lucide="flame" class="h-6 w-6 text-red-600"></i>
+                        </div> -->
+                        <div class="bg-yellow-100 p-3 rounded-lg group-hover:bg-yellow-200 transition-colors">
+                            <i data-lucide="trophy" class="h-6 w-6 text-yellow-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-slate-900">First Runner up</h3>
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded border">2018</span>
+                            </div>
+                            <p class="text-sm text-slate-600">Hurdlemania, at Technex, annual Tech-Fest of IIT BHU</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Award 6
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-lg transition-all duration-300 group">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-indigo-100 p-3 rounded-lg group-hover:bg-indigo-200 transition-colors">
+                            <i data-lucide="crown" class="h-6 w-6 text-indigo-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold text-slate-900">Presidential Early Career Award</h3>
+                                <span class="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded border">2018</span>
+                            </div>
+                            <p class="text-sm text-slate-600">PECASE - Highest honor bestowed by the U.S. government on young scientists.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Additional Honors List
+            <div class="mt-12 bg-slate-900 rounded-2xl p-8 text-white">
+                <h3 class="font-serif text-xl font-semibold mb-6 text-center">Additional Honors & Fellowships</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="h-5 w-5 text-blue-400 flex-shrink-0"></i>
+                        <span class="text-slate-300">Burroughs Wellcome Fund Career Award (2017)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="h-5 w-5 text-blue-400 flex-shrink-0"></i>
+                        <span class="text-slate-300">HHMI Gilliam Fellowship (2016)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="h-5 w-5 text-blue-400 flex-shrink-0"></i>
+                        <span class="text-slate-300">Best Poster Award - ASHG (2015)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="h-5 w-5 text-blue-400 flex-shrink-0"></i>
+                        <span class="text-slate-300">MIT Presidential Fellowship (2008)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="h-5 w-5 text-blue-400 flex-shrink-0"></i>
+                        <span class="text-slate-300">Stanford Bio-X Fellowship (2006)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="h-5 w-5 text-blue-400 flex-shrink-0"></i>
+                        <span class="text-slate-300">Summa Cum Laude - UC Berkeley (2006)</span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="font-serif text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Get in Touch</h2>
+                    <p class="text-slate-600 text-lg mb-8">Interested in collaboration or discussing research? I'd love to hear from you.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i data-lucide="mail" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-slate-900">Email</p>
+                                <p class="text-slate-600">spandey8@buffalo.edu</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-slate-900">Office</p>
+                                <p class="text-slate-600">113V, Davis Hall, White Road<br>University at Buffalo (North Campus), SUNY<br>Buffalo, NY 14260</p>
+                            </div>
+                        </div>
+                        <!-- <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i data-lucide="calendar" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-slate-900">Office Hours</p>
+                                <p class="text-slate-600">Anyday of the week<br>2:00 PM - 4:00 PM</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <form onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-accent focus:ring-2 focus:ring-blue-100 outline-none transition-all" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-accent focus:ring-2 focus:ring-blue-100 outline-none transition-all" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+                            <input type="text" id="subject" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-accent focus:ring-2 focus:ring-blue-100 outline-none transition-all" placeholder="Research collaboration inquiry">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-accent focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2">
+                            <span>Send Message</span>
+                            <i data-lucide="send" class="h-4 w-4"></i>
+                        </button>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2">
+                    <span class="font-serif text-xl font-bold text-white mb-4 block">Shubham Pandey</span>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+                        Leveraging deep learning and multimodal data to build scalable, interpretable AI solutions for real-world healthcare challenges.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#experience" class="hover:text-white transition-colors">Experience</a></li>
+                        <li><a href="#research" class="hover:text-white transition-colors">Research</a></li>
+                        <li><a href="#publications" class="hover:text-white transition-colors">Publications</a></li>
+                        <!-- <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li> -->
+                        <li><a href="#blog" class="hover:text-white transition-colors">Blogs</a></li>
+                        <li><a href="#awards" class="hover:text-white transition-colors">Awards</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="assets/Shubham_Pandey_resume_phd.pdf" class="hover:text-white transition-colors">Resume</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/in/shubhampandey8/" class="hover:text-white transition-colors">
+                            <!-- <i data-lucide="linkedIn" class="h-5 w-5"></i> -->
+                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" class="h-5 w-5 invert" alt="linkedin">
+                        </a>
+                        <a href="https://github.com/KNITPhoenix/" class="hover:text-white transition-colors">
+                            <!-- <i data-lucide="GitHub" class="h-5 w-5"></i> -->
+                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" class="h-5 w-5 invert" alt="github">
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=sncALSkAAAAJ&hl=en" class="hover:text-white transition-colors">
+                            <!-- <i data-lucide="github" class="h-5 w-5"></i> -->
+                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" class="h-5 w-5 invert" alt="Google Scholar">
+                        </a>
+                        <a href="https://orcid.org/0009-0005-5507-2858" class="hover:text-white transition-colors">
+                            <!-- <i data-lucide="book-open" class="h-5 w-5"></i> -->
+                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" class="h-5 w-5 invert" alt="ORCID">
+                        </a>
+                        <a href="https://x.com/csespandey" class="hover:text-white transition-colors">
+                            <!-- <i data-lucide="book-open" class="h-5 w-5"></i> -->
+                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" class="h-5 w-5 invert" alt="X">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">&copy; 2026 Shubham Pandey. All rights reserved.</p>
+                <!-- <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-slate-900 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3">
+        <i data-lucide="check-circle" class="h-5 w-5 text-green-400"></i>
+        <span>Message sent successfully!</span>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll and navbar background
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Form submission handler
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            // Show toast
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            // Reset form
+            e.target.reset();
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Filter publications (mock function)
+        function filterPublications(type) {
+            // In a real app, this would filter the publications
+            console.log('Filtering by:', type);
+        }
+        
+        // News / Announcements Slideshow
+        const newsItems = [
+            {
+                date: "April 2026",
+                title: "Research in multimodal health AI featured in UB news",
+                description: "UB news wrote a article on my research.",
+                link: "https://www.buffalo.edu/news/releases/2026/04/ai-tool-assesses-lung-cancer-risk-buffalo-roswell.html"
+            },
+            {
+                date: "March 2026",
+                title: "Presented paper accepted at P2P-CV @ WACV 2026 in Tucson, Arizona.",
+                description: "Our work on multimodal preoperative data for pulmonary postoperative complication prediction in Oral Presentation.",
+                link: "https://www.linkedin.com/posts/shubhampandey8_wacv2026-computervision-medicalai-activity-7437888871050268672-mfnf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA_d-M4B9ouCq2dz_P7RkP0_k4xIhk0h9xM"
+            },
+            {
+                date: "Jan 2026",
+                title: "Paper accepted at P2P-CV @ WACV 2026",
+                description: "Our work on multimodal preoperative data for pulmonary postoperative complication prediction was accepted.",
+                link: "https://www.linkedin.com/posts/shubhampandey8_wacv2026-wacvw-p2pcv-activity-7419664812663681025-1i2r?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA_d-M4B9ouCq2dz_P7RkP0_k4xIhk0h9xM"
+            },
+            {
+                date: "September 2025",
+                title: "Presented paper at IEEE International Conference on Image Processing 2025 in Achorage, Alaska.",
+                description: "Our work on cross domain fingerprint matching using contrastive learning network.",
+                link: "https://www.linkedin.com/posts/shubhampandey8_icip2025-research-ubuffalo-activity-7376017162400079872-Fj2P?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA_d-M4B9ouCq2dz_P7RkP0_k4xIhk0h9xM"
+            },
+            {
+                date: "Aug 2025",
+                title: "Started as Research Assistant at University at Buffalo",
+                description: "Working on multimodal AI, healthcare, explainability, and clinical decision-support systems.",
+                link: "https://example.com/your-news-link"
+            },
+            {
+                date: "July 2025",
+                title: "Abstract accepted at at the American Association for Cancer Research Special Conference in Cancer Research: Artificial Intelligence and Machine Learning 2025",
+                description: "Our work on research that combines structured clinical data, radiomics features and LLM-generated insights to support real-time, explainable surgical decision-making.",
+                link: "https://www.linkedin.com/posts/shubhampandey8_ai-cancerresearch-aacr2025-activity-7346219598054141952-nzce?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA_d-M4B9ouCq2dz_P7RkP0_k4xIhk0h9xM"
+            },
+            {
+                date: "June 2025",
+                title: "Paper accepted at IEEE International Conference on Image Processing 2025",
+                description: "Our work on cross domain fingerprint matching using contrastive learning network.",
+                link: "https://www.linkedin.com/posts/shubhampandey8_excited-to-share-that-our-paperridgeformer-activity-7339412947221311488-VpFG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA_d-M4B9ouCq2dz_P7RkP0_k4xIhk0h9xM"
+            },
+            {
+                date: "June 2025",
+                title: "Research internship at Roswell Park",
+                description: "Worked on multimodal healthcare AI projects involving preoperative data, X-rays, and CT scans.",
+                link: "https://www.linkedin.com/posts/shubhampandey8_im-happy-to-share-that-im-starting-a-new-activity-7336620474904244225-bUCz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA_d-M4B9ouCq2dz_P7RkP0_k4xIhk0h9xM"
+            }
+        ];
+
+        let currentNewsSlide = 0;
+        let newsSlideTimer;
+
+        function showNewsSlide(index) {
+            const item = newsItems[index];
+
+            document.getElementById("news-slide-date").textContent = item.date;
+            document.getElementById("news-slide-title").textContent = item.title;
+            document.getElementById("news-slide-description").textContent = item.description;
+            document.getElementById("news-slide-link").href = item.link;
+
+            const dotsContainer = document.getElementById("news-slide-dots");
+            dotsContainer.innerHTML = "";
+
+            newsItems.forEach((_, dotIndex) => {
+                const dot = document.createElement("button");
+                dot.className =
+                    dotIndex === index
+                        ? "w-2.5 h-2.5 rounded-full bg-accent"
+                        : "w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400";
+
+                dot.setAttribute("aria-label", `Go to news slide ${dotIndex + 1}`);
+                dot.onclick = () => {
+                    currentNewsSlide = dotIndex;
+                    showNewsSlide(currentNewsSlide);
+                    restartNewsSlideTimer();
+                };
+
+                dotsContainer.appendChild(dot);
+            });
+
+            lucide.createIcons();
+        }
+
+        function nextNewsSlide() {
+            currentNewsSlide = (currentNewsSlide + 1) % newsItems.length;
+            showNewsSlide(currentNewsSlide);
+            restartNewsSlideTimer();
+        }
+
+        function previousNewsSlide() {
+            currentNewsSlide = (currentNewsSlide - 1 + newsItems.length) % newsItems.length;
+            showNewsSlide(currentNewsSlide);
+            restartNewsSlideTimer();
+        }
+
+        function startNewsSlideTimer() {
+            newsSlideTimer = setInterval(() => {
+                currentNewsSlide = (currentNewsSlide + 1) % newsItems.length;
+                showNewsSlide(currentNewsSlide);
+            }, 5000);
+        }
+
+        function restartNewsSlideTimer() {
+            clearInterval(newsSlideTimer);
+            startNewsSlideTimer();
+        }
+
+        showNewsSlide(currentNewsSlide);
+        startNewsSlideTimer();
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.paper-card, .group').forEach((el) => {
+            el.classList.add('transition-all', 'duration-500', 'opacity-0', 'translate-y-4');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
