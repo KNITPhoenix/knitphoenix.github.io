@@ -146,7 +146,7 @@
                         </a>
                     </div> -->
                 </div>
-                <div class="relative">
+                <!-- <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-3xl transform rotate-3"></div>
                     <img src="assets/images/intro_image.png" alt="Intro Image" class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px]">
                     <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
@@ -160,6 +160,37 @@
                             </div>
                         </div>
                     </div>
+                </div> -->
+                <!-- News / Announcements Slideshow -->
+                <div class="mt-6 bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+                    <div class="p-4 border-b border-slate-100 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Latest Updates</p>
+                            <h3 class="font-semibold text-slate-900">News & Announcements</h3>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <button onclick="previousNewsSlide()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
+                                <i data-lucide="chevron-left" class="h-4 w-4"></i>
+                            </button>
+                            <button onclick="nextNewsSlide()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <a id="news-slide-link" href="#" target="_blank" rel="noopener noreferrer" class="block p-5 hover:bg-slate-50 transition-colors">
+                        <p id="news-slide-date" class="text-xs font-medium text-blue-600 mb-2"></p>
+                        <h4 id="news-slide-title" class="font-semibold text-slate-900 leading-snug mb-2"></h4>
+                        <p id="news-slide-description" class="text-sm text-slate-600 leading-relaxed"></p>
+
+                        <div class="mt-4 inline-flex items-center text-sm font-medium text-accent">
+                            Read more
+                            <i data-lucide="external-link" class="ml-1 h-3 w-3"></i>
+                        </div>
+                    </a>
+
+                    <div id="news-slide-dots" class="flex justify-center gap-2 pb-4"></div>
                 </div>
             </div>
         </div>
@@ -195,37 +226,6 @@
             <div class="grid lg:grid-cols-3 gap-12">
                 <div class="lg:col-span-1">
                     <img src="assets/images/headshot.png" alt="Profile" class="rounded-2xl shadow-lg w-full object-cover h-80 lg:h-96">
-                    <!-- News / Announcements Slideshow -->
-                    <div class="mt-6 bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
-                        <div class="p-4 border-b border-slate-100 flex items-center justify-between">
-                            <div>
-                                <p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Latest Updates</p>
-                                <h3 class="font-semibold text-slate-900">News & Announcements</h3>
-                            </div>
-
-                            <div class="flex gap-2">
-                                <button onclick="previousNewsSlide()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
-                                    <i data-lucide="chevron-left" class="h-4 w-4"></i>
-                                </button>
-                                <button onclick="nextNewsSlide()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
-                                    <i data-lucide="chevron-right" class="h-4 w-4"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <a id="news-slide-link" href="#" target="_blank" rel="noopener noreferrer" class="block p-5 hover:bg-slate-50 transition-colors">
-                            <p id="news-slide-date" class="text-xs font-medium text-blue-600 mb-2"></p>
-                            <h4 id="news-slide-title" class="font-semibold text-slate-900 leading-snug mb-2"></h4>
-                            <p id="news-slide-description" class="text-sm text-slate-600 leading-relaxed"></p>
-
-                            <div class="mt-4 inline-flex items-center text-sm font-medium text-accent">
-                                Read more
-                                <i data-lucide="external-link" class="ml-1 h-3 w-3"></i>
-                            </div>
-                        </a>
-
-                        <div id="news-slide-dots" class="flex justify-center gap-2 pb-4"></div>
-                    </div>
                     <div class="mt-6 space-y-3">
                         <div class="flex items-center gap-3 text-slate-600">
                             <i data-lucide="map-pin" class="h-4 w-4"></i>
@@ -748,7 +748,7 @@
                                     <i data-lucide="download" class="h-4 w-4"></i>
                                     PDF
                                 </a>
-                                <span class="text-sm text-slate-400">Cited by 1</span>
+                                <span class="text-sm text-slate-400">Cited by 3</span>
                             </div>
                         </div>
                     </div>
@@ -812,7 +812,7 @@
                                     <i data-lucide="download" class="h-4 w-4"></i>
                                     PDF
                                 </a>
-                                <span class="text-sm text-slate-400">Cited by 21</span>
+                                <span class="text-sm text-slate-400">Cited by 25</span>
                             </div>
                         </div>
                     </div>
@@ -861,7 +861,6 @@
                         </div>
                     </div>
                 </div> -->
-
                 <!-- Project 2
                 <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300">
                     <div class="h-48 overflow-hidden">
@@ -1322,6 +1321,12 @@
         
         // News / Announcements Slideshow
         const newsItems = [
+            {
+                date: "April 2026",
+                title: "Research featured in Becker's Health IT, Becker's Healthcare forum",
+                description: "Story on my research for lung cancer surgery's postoperative complication risk assessment.",
+                link: "https://www.beckershospitalreview.com/healthcare-information-technology/ai/new-york-cancer-center-develops-ai-tool-for-lung-surgery-risk/"
+            },
             {
                 date: "April 2026",
                 title: "Research in multimodal health AI featured in UB news",
